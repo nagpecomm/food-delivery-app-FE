@@ -10,21 +10,27 @@ import { Router } from '@angular/router';
 })
 export class RestaurantListingComponent {
 
-  public restaurantList: Restaurant[];
+  public restaurantList: Restaurant[] = [];
+public filteredRestaurantList: Restaurant[] = [];
 
-  ngOnInit() {
-    this.getAllRestaurants();
-  }
+searchText: string = "";
+sortOption: string = "";
+
+ngOnInit() {
+  this.getAllRestaurants();
+}
 
   constructor(private router: Router, private restaurantService: RestaurantService) { }
 
   getAllRestaurants() {
-    this.restaurantService.getAllRestaurants().subscribe(
-      data => {
-        this.restaurantList = data;
-      }
-    )
-  }
+  this.restaurantService.getAllRestaurants().subscribe(
+    data => {
+      this.restaurantList = data;
+      this.filteredRestaurantList = data;
+    }
+  )
+}
+
   getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -40,5 +46,26 @@ export class RestaurantListingComponent {
     this.router.navigate(['/food-catalogue', id]);
   }
 
+
+  applyFilters(){
+
+  let list = [...this.restaurantList];
+
+  if(this.searchText){
+    list = list.filter(r =>
+      r.name.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
+  if(this.sortOption === "az"){
+    list.sort((a,b)=> a.name.localeCompare(b.name));
+  }
+
+  if(this.sortOption === "za"){
+    list.sort((a,b)=> b.name.localeCompare(a.name));
+  }
+
+  this.filteredRestaurantList = list;
+}
 
 }
