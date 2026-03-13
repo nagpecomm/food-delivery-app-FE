@@ -3,11 +3,11 @@
 // export const API_URL_FC ='http://localhost:9092';
 // export const API_URL_UD ='http://localhost:9093';
 
-//export const K8ExternalIp = 'http://k8s-default-awsingre-3d4b7f90d4-122545836.eu-west-3.elb.amazonaws.com';
+//export const K8ExternalIp = 'http://k8s-default-awsingre-9aa4c55379-1771626661.eu-west-2.elb.amazonaws.com';
 
-export const API_URL_RL ='http://k8s-default-awsingre-9aa4c55379-690314829.eu-west-2.elb.amazonaws.com';
-export const API_URL_Order ='http://k8s-default-awsingre-9aa4c55379-690314829.eu-west-2.elb.amazonaws.com';
-export const API_URL_FC ='http://k8s-default-awsingre-9aa4c55379-690314829.eu-west-2.elb.amazonaws.com';
-export const API_URL_UD ='http://k8s-default-awsingre-9aa4c55379-690314829.eu-west-2.elb.amazonaws.com';
+export const API_URL_RL ='http://k8s-default-awsingre-9aa4c55379-1771626661.eu-west-2.elb.amazonaws.com';
+export const API_URL_Order ='http://k8s-default-awsingre-9aa4c55379-1771626661.eu-west-2.elb.amazonaws.com';
+export const API_URL_FC ='http://k8s-default-awsingre-9aa4c55379-1771626661.eu-west-2.elb.amazonaws.com';
+export const API_URL_UD ='http://k8s-default-awsingre-9aa4c55379-1771626661.eu-west-2.elb.amazonaws.com';
 
 
